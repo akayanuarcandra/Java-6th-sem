@@ -6,7 +6,7 @@ public class ScannerDemo {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your name: ");
         String name = scanner.nextLine();
-        System.out.println("Please enter your student ID");
+        System.out.println("Please enter your student ID: ");
         int ID = scanner.nextInt();
         System.out.println("My name is " + name);
         System.out.println("My student ID is " + ID);
