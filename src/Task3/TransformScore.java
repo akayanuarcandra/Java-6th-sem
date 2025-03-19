@@ -20,7 +20,11 @@ public class TransformScore {
                             if (score >= 60) {
                                 System.out.println("D");
                             } else {
-                                System.out.println("F");
+                                if (score >= 0) {
+                                    System.out.println("F");
+                                } else {
+                                    System.out.println("Invalid score. Please enter a number between 0 and 100.");
+                                }
                             }
                         }
                     }
