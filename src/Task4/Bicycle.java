@@ -4,6 +4,7 @@ public class Bicycle {
 	int cadence = 0;
 	int speed = 0;
 	int gear = 1;
+	String color;
 
 	void changeCadence(int newValue) {
 		cadence = newValue;
@@ -21,10 +22,20 @@ public class Bicycle {
 		speed = speed - decrement;
 	}
 
+	void setColor(String newValue) {
+		color = newValue;
+	}
+
+	String getColor() {
+		return color;
+	}
+
 	void printStates() {
-		System.out.println("cadence:" +
-				cadence + " speed:" +
-				speed + " gear:" + gear);
+		System.out.println(
+				"cadence:" + cadence +
+				" speed:" + speed +
+				" gear:" + gear +
+				" color:" + getColor());
 	}
 
 }
