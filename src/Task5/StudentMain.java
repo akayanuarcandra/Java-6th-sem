@@ -15,5 +15,6 @@ public class StudentMain {
         System.out.println("=======================================");
         s2.printInfo();
         System.out.println("=======================================");
-        s3.printInfo();    }
+        s3.printInfo();
+    }
 }

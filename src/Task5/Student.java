@@ -34,8 +34,7 @@ public class Student {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public String getName() {        return name;
     }
 
     public void setAge(int age) {
