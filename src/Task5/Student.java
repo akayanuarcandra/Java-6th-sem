@@ -1,20 +1,33 @@
 package Task5;
 
 public class Student {
+    private static int idCounter = 1;
+    private final String id;
     private String name;
     private String email;
     private int age;
 
     public Student(String name, int age) {
+        this.id = generateId();
         this.name = name;
         this.age = age;
     }
 
     public Student(String name) {
+        this.id = generateId();
         this.name = name;
     }
 
     public Student() {
+        this.id = generateId();
+    }
+
+    private String generateId() {
+        return "202511039" + String.format("%03d", idCounter++);
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setName(String name) {
@@ -46,8 +59,9 @@ public class Student {
     }
 
     public void printInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
-        System.out.println("Age: " + age);
+        System.out.println("ID: " + getId());
+        System.out.println("Name: " + getName());
+        System.out.println("Email: " + getEmail());
+        System.out.println("Age: " + getAge());
     }
 }
