@@ -1,0 +1,6 @@
+Tom 19  M
+Kate 21  F
+John 23  M
+Smith 21 M
+James 20 M
+Mike  18  M
