@@ -13,6 +13,10 @@ public class StudentData {
         return studentCount >= students.length;
     }
 
+    public boolean isEmpty() {
+        return studentCount == 0;
+    }
+
     public void addStudent(Student student) {
         if (!isFull()) {
             students[studentCount++] = student;
@@ -102,6 +106,27 @@ public class StudentData {
         }
         if (!found) {
             System.out.println("No students older than " + age);
+        }
+        System.out.println("-------------------");
+    }
+
+    public void deleteStudent(String name) {
+        System.out.println("-------------------");
+        boolean found = false;
+        for (int i = 0; i < studentCount; i++) {
+            if (students[i].getName().equalsIgnoreCase(name)) {
+                for (int j = i; j < studentCount - 1; j++) {
+                    students[j] = students[j + 1];
+                }
+                students[studentCount - 1] = null;
+                studentCount--;
+                found = true;
+                System.out.println("Student " + name + " deleted successfully.");
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Student " + name + " not found.");
         }
         System.out.println("-------------------");
     }
