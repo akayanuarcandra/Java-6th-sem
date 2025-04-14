@@ -16,8 +16,8 @@ public class StudentMain {
 
         for (Student student : students) {
             System.out.println("==========================");
-            for (int i = 0; i < 3; i++) {
-                System.out.print("Enter " + student.getName() + " score for test " + (i + 1) + ": ");
+            for (int i = 1; i <= 3; i++) {
+                System.out.print("Enter " + student.getName() + " score for test " + (i) + ": ");
                 int score = scanner.nextInt();
                 student.setTestScore(i, score);
             }

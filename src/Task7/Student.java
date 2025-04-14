@@ -27,8 +27,8 @@ public class Student {
         if (test == null) {
             test = new int[NumberOfTest];
         }
-        if (testNumber >= 0 && testNumber <= NumberOfTest) {
-            test[testNumber] = testScore;
+        if (testNumber > 0 && testNumber <= NumberOfTest) {
+            test[testNumber - 1] = testScore;
         } else {
             System.out.println("Invalid test number");
         }
