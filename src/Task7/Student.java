@@ -55,10 +55,6 @@ public class Student {
     }
 
     public void computeCourseGrade() {
-        if (getAverageScore() >= 60) {
-            courseGrade = "Pass";
-        } else {
-            courseGrade = "Not Pass";
-        }
+
     }
 }
