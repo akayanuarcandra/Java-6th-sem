@@ -1,11 +1,12 @@
 package Task7;
 
 public class Student {
-    private final int NumberOfTest = 3;
-    private String name;
-    private int[] test;
+    protected final int NumberOfTest = 3;
+    protected String name;
+    protected int[] test;
     protected String courseGrade;
     protected double averageScore;
+    protected char type; // U for Undergraduate, G for Graduate
 
     public Student() {
 
@@ -55,6 +56,18 @@ public class Student {
     }
 
     public void computeCourseGrade() {
+
+    }
+
+    public void setType(char type) {
+        this.type = type;
+    }
+
+    public char getType() {
+        return type;
+    }
+
+    public void displayInfo() {
 
     }
 }
