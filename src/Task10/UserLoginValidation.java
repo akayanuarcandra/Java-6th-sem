@@ -28,8 +28,10 @@ public class UserLoginValidation {
             }
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
+            return;
         } catch (Exception e) {
             System.out.println("An unexpected error occurred: " + e.getMessage());
+            return;
         }
 
         try {
