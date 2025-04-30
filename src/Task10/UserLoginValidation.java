@@ -23,7 +23,7 @@ public class UserLoginValidation {
             correctPassword = scanner.nextLine();
             if (correctPassword.isEmpty()) {
                 throw new IllegalArgumentException("Password cannot be empty.");
-            } else if (correctPassword.length() < 8 || correctPassword.length() > 9) {
+            } else if (correctPassword.length() != 8) {
                 throw new IllegalArgumentException("Password must be 8 characters.");
             }
         } catch (IllegalArgumentException e) {
