@@ -1,3 +1,5 @@
+package Task6.materials;
+
 import java.util.*;
 public class ArrayPassingTest {    
     public static void main (String[] args) {

@@ -8,14 +8,12 @@ public class ScoreStatistics {
             int totalStudents = 0;
             System.out.print("Enter the total number of students: ");
             totalStudents = Integer.parseInt(scanner.nextLine());
-
             if (totalStudents <= 0) {
                 throw new IllegalArgumentException("Number of students must be greater than 0.");
             }
             System.out.println("============================");
 
             double[] averageScores = new double[totalStudents];
-
             for (int i = 0; i < totalStudents; i++) {
                 System.out.print("Enter scores for student " + (i + 1) + " (comma-separated): ");
                 String[] scoresInput = scanner.nextLine().split(",");
