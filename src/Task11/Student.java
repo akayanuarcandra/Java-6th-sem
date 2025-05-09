@@ -55,24 +55,16 @@ public class Student {
         return "Name: " + this.name + " Email: " + this.email + " Age: " + this.age;
     }
 
-    public void read() {
-        try (BufferedReader br = new BufferedReader(new FileReader("Task11/list.txt"))) {
-            String line;
-            System.out.println("Reading from list.txt:");
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
-        }
-    }
-
-    public void write() {
+    public void readWrite() {
         try (BufferedReader br = new BufferedReader(new FileReader("Task11/list.txt"));
              FileWriter fw = new FileWriter("Task11/info.txt")) {
             
             String line;
+            System.out.println("Reading and writing student information:");
+    
             while ((line = br.readLine()) != null) {
+                System.out.println("Original: " + line);
+                
                 String[] parts = line.split(" ");
                 if (parts.length >= 3) {
                     String name = parts[0];
@@ -83,9 +75,9 @@ public class Student {
                     fw.write(studentInfo);
                 }
             }
-            System.out.println("Student information written to info.txt");
+            System.out.println("\nStudent information written to info.txt");
         } catch (IOException e) {
-            System.err.println("Error writing to file: " + e.getMessage());
+            System.err.println("Error reading/writing file: " + e.getMessage());
         }
     }
 }
