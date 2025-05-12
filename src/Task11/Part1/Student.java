@@ -1,4 +1,4 @@
-package Task11;
+package Task11.Part1;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +10,6 @@ public class Student {
     private String email;
     private int age;
 
-    // Constructors
     public Student(String name, String email, int age) {
         this.name = name;
         this.email = email;
@@ -25,7 +24,6 @@ public class Student {
         this("", "", 0);
     }
 
-    // Getter and Setter methods
     public void setName(String name) {
         this.name = name;
     }

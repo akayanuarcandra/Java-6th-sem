@@ -1,4 +1,4 @@
-package Task11;
+package Task11.Part1;
 
 public class StudentMain {
     public static void main(String[] args) {
