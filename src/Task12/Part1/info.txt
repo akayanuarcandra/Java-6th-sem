@@ -1,0 +1,4 @@
+Name: Aster Email: aster@mail.com Age: 18
+Name: Kite Email: kite@mail.com Age: 19
+Name: James Email: james@mail.com Age: 23
+Name: John Email: john@mail.com Age: 20
