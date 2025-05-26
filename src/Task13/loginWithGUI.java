@@ -1,0 +1,106 @@
+package Task13;
+
+import java.awt.Color;
+import javax.swing.*;
+
+public class loginWithGUI {
+    public static void main(String[] args) {
+        // create a new jframe
+        JFrame frame = new javax.swing.JFrame("Login Form");
+
+        // set the default close operation
+        frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+        // set the size of the frame
+        frame.setSize(400, 300);
+
+        // create a panel to hold the components
+        JPanel panel = new javax.swing.JPanel();
+
+        // set panel color
+        panel.setBackground(Color.decode("#1e1e1e"));
+
+        // set caret color
+        UIManager.put("TextField.caretForeground", Color.decode("#D9D9D9"));
+        UIManager.put("PasswordField.caretForeground", Color.decode("#D9D9D9"));
+
+        // create a label for the username
+        JLabel userLabel = new javax.swing.JLabel("Username:");
+        userLabel.setForeground(Color.decode("#D9D9D9"));
+
+        // create a text field for the username
+        JTextField userText = new javax.swing.JTextField(20);
+        userText.setBackground(Color.decode("#2e2e2e"));
+        userText.setForeground(Color.decode("#D9D9D9"));     
+        userText.setBorder(javax.swing.BorderFactory.createLineBorder(Color.decode("#979797"), 1));
+
+        // create a label for the password
+        JLabel passwordLabel = new javax.swing.JLabel("Password:");
+        passwordLabel.setForeground(Color.decode("#D9D9D9"));
+
+        // create a password field for the password
+        JPasswordField passwordText = new javax.swing.JPasswordField(20);
+        passwordText.setBackground(Color.decode("#2e2e2e"));
+        passwordText.setForeground(Color.decode("#D9D9D9"));
+        passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(Color.decode("#979797"), 1));
+        
+        // create a button for login
+        JButton loginButton = new javax.swing.JButton("Login");
+        loginButton.setBackground(Color.decode("#2e2e2e"));
+        loginButton.setForeground(Color.decode("#D9D9D9"));
+
+        // create a button to exit
+        JButton exitButton = new javax.swing.JButton("Exit");
+        exitButton.setBackground(Color.decode("#2e2e2e"));
+        exitButton.setForeground(Color.decode("#D9D9D9"));
+
+        // add an action listener to the login button
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                String username = userText.getText();
+                String password = new String(passwordText.getPassword());
+                
+                // Here you can add your login logic
+                if (username.equals("admin") && password.equals("password")) {
+                    javax.swing.JOptionPane.showMessageDialog(frame, "Login Successful!");
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(frame, "Invalid Username or Password");
+                }
+            }
+        });
+
+        // add an action listener to the exit button
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        // add components to the panel
+        panel.add(userLabel);
+        panel.add(userText);
+        panel.add(passwordLabel);
+        panel.add(passwordText);
+        panel.add(new javax.swing.JLabel()); // empty cell
+        panel.add(loginButton);
+        panel.add(exitButton);
+
+        // add the panel to the frame
+        frame.add(panel);
+
+        // set the frame visibility
+        frame.setVisible(true);
+
+        // set the layout manager
+        panel.setLayout(new java.awt.GridLayout(7, 2));
+
+        // grid layout add padding
+        panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 20, 20));
+
+        // set the frame to be resizable
+        frame.setResizable(false);
+
+        // center the frame on the screen
+        frame.setLocationRelativeTo(null);
+    }
+}
