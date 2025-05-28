@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class loginWithGUI {
+public class LoginWithGUI {
     public static void main(String[] args) {
         // create a new jframe
         JFrame frame = new JFrame("Login Form");
