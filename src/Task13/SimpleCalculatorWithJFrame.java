@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-public class SimpleCalculatorWithJFrame {
+public class SimpleCalculatorWithJFrame {   
     public static void main(String[] args) {
         JFrame frame = new JFrame("Simple Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
