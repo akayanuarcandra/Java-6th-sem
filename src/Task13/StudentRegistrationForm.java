@@ -1,6 +1,5 @@
 package Task13;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,26 +8,25 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import javax.swing.*;
 
 public class StudentRegistrationForm extends JFrame implements ActionListener {
 
-    // Components
     JTextField tfStudentId, tfName, tfBirthday, tfEmail, tfPhone;
     JPasswordField pfPassword, pfConfirmPassword;
-    JRadioButton rbMale, rbFemale, rbOther;
+    JRadioButton rbMale, rbFemale;
     ButtonGroup genderGroup;
     JComboBox<String> cbCountry;
     JCheckBox chbReading, chbSports, chbMusic, chbCoding;
     JTextArea taProfile;
     JButton btnSubmit, btnQuit;
 
-    // Labels (optional, but good for clarity)
     JLabel lblStudentId, lblName, lblPassword, lblConfirmPassword, lblGender,
            lblBirthday, lblEmail, lblPhone, lblCountry, lblHobbies, lblProfile;
 
     public StudentRegistrationForm() {
         setTitle("Student Club Registration");
-        setSize(700, 700); // Adjusted size for more fields
+        setSize(700, 700);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -66,18 +64,14 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
         lblGender = new JLabel("Gender:");
         rbMale = new JRadioButton("Male");
         rbFemale = new JRadioButton("Female");
-        rbOther = new JRadioButton("Other");
         rbMale.setActionCommand("Male"); // Important for retrieving value
         rbFemale.setActionCommand("Female");
-        rbOther.setActionCommand("Other");
         genderGroup = new ButtonGroup();
         genderGroup.add(rbMale);
         genderGroup.add(rbFemale);
-        genderGroup.add(rbOther);
         JPanel genderPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         genderPanel.add(rbMale);
         genderPanel.add(rbFemale);
-        genderPanel.add(rbOther);
         inputPanel.add(lblGender);
         inputPanel.add(genderPanel);
 
@@ -101,7 +95,7 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
 
         // Country
         lblCountry = new JLabel("Country:");
-        String[] countries = {"--Select Country--", "USA", "Canada", "UK", "Germany", "India", "China", "Other"};
+        String[] countries = {"--Select Country--", "USA", "Canada", "UK", "Germany", "India", "China", "Indonesia", "Other"};
         cbCountry = new JComboBox<>(countries);
         inputPanel.add(lblCountry);
         inputPanel.add(cbCountry);
@@ -205,7 +199,7 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
 
         // Birthday validation (YYYY-MM-DD)
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        sdf.setLenient(false); // Don't allow invalid dates like 2023-02-30
+        sdf.setLenient(false); // Don't allow invalid dates
         try {
             sdf.parse(birthday);
         } catch (ParseException ex) {
@@ -215,8 +209,6 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
 
         // Email validation (simple: contains @ and .)
         if (!Pattern.matches("^[A-Za-z0-9+_.-]+@(.+)$", email)) {
-        // A more robust regex: "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
-        // But for "simple as possible", the above is fine.
             JOptionPane.showMessageDialog(this, "Invalid email format.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -227,7 +219,6 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
         info.append("Registration Successful!\n\n");
         info.append("Student ID: ").append(studentId).append("\n");
         info.append("Name: ").append(name).append("\n");
-        // info.append("Password: [HIDDEN]\n"); // Don't display password
         info.append("Gender: ").append(gender).append("\n");
         info.append("Birthday: ").append(birthday).append("\n");
         info.append("Email: ").append(email).append("\n");
@@ -238,7 +229,6 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
 
         JOptionPane.showMessageDialog(this, info.toString(), "Registration Details", JOptionPane.INFORMATION_MESSAGE);
 
-        // Optional: Clear fields after successful submission
         clearFields();
     }
 
@@ -260,7 +250,6 @@ public class StudentRegistrationForm extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        // Run the GUI code on the Event Dispatch Thread (EDT)
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new StudentRegistrationForm();
